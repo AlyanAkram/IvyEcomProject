@@ -133,3 +133,39 @@ footer {
 .login-link:hover {
   background-color: #0056b3; /* Darker shade on hover */
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+img {
+  max-width: 150px; /* Adjust width as needed */
+  max-height: 150px; /* Adjust height as needed */
+  width: 100%; /* Ensures responsiveness */
+  height: auto; /* Maintains aspect ratio */
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
