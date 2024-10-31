@@ -43,7 +43,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> IVY Roots, Department of BTech IT Level 3. All rights reserved. 2024-25</p>
+        <p>&copy; <?php echo date("Y"); ?> IVY Roots, Department of BTech IT Level 3. All rights reserved.</p>
     </footer>
 </body>
 </html>
