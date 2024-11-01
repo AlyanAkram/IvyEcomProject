@@ -1,0 +1,44 @@
+/* styles.css */
+html,
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and borders in element's total width and height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Link Styles */
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: #007bff; /* Default link color */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+a:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Header and Footer Styles */
+header,
+footer {
+  background-color: #343a40; /* Dark background for header and footer */
+  color: white; /* White text color */
+  padding: 20px; /* Padding */
+  text-align: center; /* Centered text */
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center; /* Centered text utility */
+}
+
+.mt-20 {
+  margin-top: 20px; /* Top margin utility */
+}
+
+/* Additional Styles */
+.container {
+  max-width: 1200px; /* Max width for containers */
+  margin: auto; /* Center container */
+  padding: 20px; /* Padding for container */
+}

@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css"> <!-- Link to auth.css -->
     <title>User Login</title>
 </head>
 <body>
@@ -13,11 +14,14 @@
         <h1>Login</h1>
     </header>
     <main>
-        <form action="login.php" method="POST">
-            <input type="text" name="identifier" placeholder="Email or Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Login">
-        </form>
+        <div class="form-container">
+            <form action="login.php" method="POST">
+                <input type="text" name="identifier" placeholder="Email or Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+
+        </div>
         <p>Don't have an account? <a href="register.php" class="register-link">Register here</a></p>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

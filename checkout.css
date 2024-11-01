@@ -1,0 +1,63 @@
+/* checkout.css */
+
+body {
+  background-color: #f8f9fa; /* Same as global styles */
+  color: #333; /* Text color */
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #343a40;
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 2px solid #e0e0e0;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  display: block;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

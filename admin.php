@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_product'])) {
 if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] == 0) {
     $image_tmp = $_FILES['product_image']['tmp_name'];
     $image_name = basename($_FILES['product_image']['name']);
-    $upload_dir = 'uploads/'; // Ensure this directory exists and is writable
+    $upload_dir = 'images/'; // Ensure this directory exists and is writable
 
     // Check if uploads directory exists
     if (!is_dir($upload_dir)) {
@@ -96,7 +96,8 @@ $result = $conn->query("SELECT * FROM products");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin_panel.css">
     <title>Admin Panel</title>
 </head>
 <body>
@@ -104,7 +105,7 @@ $result = $conn->query("SELECT * FROM products");
         <h1>Admin Panel</h1>
         <nav>
             <a href="index.php">Home</a>
-            <a href="logout.php">Logout</a>
+            <a href="admin_login.php">Logout</a>
         </nav>
     </header>
     <main>
@@ -154,5 +155,7 @@ $result = $conn->query("SELECT * FROM products");
             <?php endwhile; ?>
         </table>
     </main>
+    <?php include 'footer.php'; ?>
+
 </body>
 </html>

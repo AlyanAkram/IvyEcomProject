@@ -1,0 +1,57 @@
+/* cart.css */
+
+/* Main Content Styles */
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #000000; /* Color for headings */
+}
+
+/* Cart Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 20px; /* Increased padding for larger cell height */
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0; /* Increased line thickness */
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+td img {
+  width: 100px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for product images */
+}
+
+td a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 1.5em; /* Increase font size for + and - signs */
+  padding: 5px; /* Add some padding for better clickability */
+}
+
+td a:hover {
+  color: #0056b3; /* Change link color on hover */
+}
+
+/* Total Cost Styles */
+tfoot {
+  font-weight: bold;
+  text-align: right;
+}

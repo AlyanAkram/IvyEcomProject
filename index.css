@@ -1,0 +1,133 @@
+/* index.css */
+
+/* Global Styles */
+html,
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and borders in element's total width and height */
+  font-family: Arial, sans-serif; /* Set global font */
+  background-color: #f8f9fa; /* Background color */
+  color: #333; /* Text color */
+}
+
+/* Hero Section Styles */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden; /* Hide overflow */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  background-image: url("images/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s;
+}
+
+.hero-image:hover {
+  transform: scale(1.1); /* Zoom effect only on the image */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-banner h1 {
+  font-size: 3em;
+  color: white;
+  z-index: 1; /* Ensure the text is above the overlay */
+}
+
+/* Main Content Styles */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #343a40; /* Color for headings */
+}
+
+/* Product List Styles */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Space between product cards */
+  padding: 20px; /* Padding around the grid */
+}
+
+.product-card {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add border radius to images */
+}
+
+.product-card h3 {
+  font-size: 1.5em;
+  margin: 15px 0;
+  color: #333;
+}
+
+.product-card p {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.product-card .price {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.product-card form {
+  margin-top: 10px;
+}
+
+.product-card input[type="submit"] {
+  display: block;
+  padding: 12px 0;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card input[type="submit"]:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

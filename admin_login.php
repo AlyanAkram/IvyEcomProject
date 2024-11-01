@@ -2,6 +2,8 @@
 session_start();
 include 'db.php';
 
+$error = ''; // Initialize error variable
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -39,20 +41,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
     <title>Admin Login</title>
 </head>
 <body>
-    <h1>Admin Login</h1>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form action="admin_login.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        
-        <button type="submit">Login</button>
-    </form>
+    <main>
+        <h1>Admin Login</h1>
+        <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+        <form action="admin_login.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </main>
 </body>
 </html>
