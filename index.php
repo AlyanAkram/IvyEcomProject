@@ -59,6 +59,14 @@ include 'db.php';
         }
         ?>
     </div>
+
+    <!-- Second Hero Section -->
+    <div class="hero-banner">
+        <div class="hero-image2"></div> <!-- Div for background image -->
+        <div class="hero-overlay"> <!-- Dark overlay -->
+        <a href="products.php" class='slogan'>All Your Tech Needs In One Place</a>
+        </div>
+    </div>
 </main>
 
 <?php include 'footer.php'; ?>
