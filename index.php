@@ -9,7 +9,10 @@ include 'db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"> <!-- Global styles -->
     <link rel="stylesheet" href="index.css"> <!-- Page-specific styles -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <title>IVY Roots Tech Shop</title>
 </head>
 <body>
@@ -28,33 +31,33 @@ include 'db.php';
 <main>
     <h2>Featured Products</h2>
     
-    <!-- Product List -->
-    <div class="product-list">
-    <?php
-    // Limit the number of products displayed to 4
-    $result = $conn->query("SELECT * FROM products LIMIT 4");
-    
-    // Check if there are results
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo '<div class="product-card">
-                      <div style="position: relative; overflow: hidden; border-radius: 8px;">
-                          <img src="'.$row['image'].'" alt="'.$row['name'].'">
-                      </div>
-                      <h3>'.$row['name'].'</h3>
-                      <p>'.$row['description'].'</p>
-                      <p class="price">$'.$row['price'].'</p>';
-            
-            echo '<form class="add-to-cart-form" data-product-id="'.$row['id'].'">
-                    <input type="hidden" name="product_id" value="'.$row['id'].'">
-                    <input type="submit" value="Add to Cart">
-                  </form>';
-            echo '</div>';
+    <!-- Product Slider -->
+    <div class="product-slider">
+        <?php
+        // Limit the number of products displayed to 4
+        $result = $conn->query("SELECT * FROM products LIMIT 4");
+        
+        // Check if there are results
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="product-card">
+                          <div style="position: relative; overflow: hidden; border-radius: 8px;">
+                              <img src="'.$row['image'].'" alt="'.$row['name'].'">
+                          </div>
+                          <h3>'.$row['name'].'</h3>
+                          <p>'.$row['description'].'</p>
+                          <p class="price">$'.$row['price'].'</p>';
+                
+                echo '<form class="add-to-cart-form" data-product-id="'.$row['id'].'">
+                        <input type="hidden" name="product_id" value="'.$row['id'].'">
+                        <input type="submit" value="Add to Cart">
+                      </form>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No products available.</p>'; // Handle no products case
         }
-    } else {
-        echo '<p>No products available.</p>'; // Handle no products case
-    }
-    ?>
+        ?>
     </div>
 </main>
 
@@ -85,6 +88,28 @@ $(document).ready(function() {
 });
 </script>
 
+<!-- Slider initialization -->
+<script>
+$(document).ready(function() {
+    $('.product-slider').slick({
+        slidesToShow: 4, // Show 4 products at a time on large screens
+        slidesToScroll: 1,
+        autoplay: true, // Optional: enable autoplay
+        autoplaySpeed: 2000, // Optional: speed for autoplay
+        infinite: true, // Allows infinite scrolling
+        centerMode: false, // Disable center mode
+        responsive: [
+            {
+                breakpoint: 768, // Adjust for smaller screens
+                settings: {
+                    slidesToShow: 2, // Show 2 products on smaller screens
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+});
+</script>
 
 </body>
 </html>

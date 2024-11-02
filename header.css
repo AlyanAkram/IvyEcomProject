@@ -40,7 +40,8 @@
   transition: background-color 0.3s;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.cart-link:hover {
   background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
 
@@ -52,6 +53,7 @@
 .cart-link {
   color: #f8f9fa;
   text-decoration: none;
+  margin-right: 10px;
   padding: 10px 15px;
   border-radius: 5px;
   display: flex;

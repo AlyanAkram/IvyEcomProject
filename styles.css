@@ -1,10 +1,16 @@
 /* styles.css */
+
+/* Global Styles */
 html,
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  box-sizing: border-box; /* Include padding and borders in element's total width and height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow-x: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding and borders in element's total width and height */
+  font-family: Arial, sans-serif; /* Set global font */
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color */
 }
 
 /* Link Styles */
@@ -15,30 +21,24 @@ a {
 }
 
 a:hover {
-  color: #0056b3; /* Darker color on hover */
+  color: #0056b3; /* Change link color on hover */
 }
 
 /* Header and Footer Styles */
 header,
 footer {
-  background-color: #343a40; /* Dark background for header and footer */
-  color: white; /* White text color */
-  padding: 20px; /* Padding */
-  text-align: center; /* Centered text */
+  background-color: #1e1e1e; /* Dark background for header and footer */
+  padding: 20px;
+  text-align: center;
 }
 
-/* Utility Classes */
-.text-center {
-  text-align: center; /* Centered text utility */
+header h1,
+footer p {
+  margin: 0;
+  color: #e0e0e0; /* Light text color for header and footer */
 }
 
-.mt-20 {
-  margin-top: 20px; /* Top margin utility */
-}
-
-/* Additional Styles */
-.container {
-  max-width: 1200px; /* Max width for containers */
-  margin: auto; /* Center container */
-  padding: 20px; /* Padding for container */
+.cart-count {
+  font-weight: bold;
+  color: #0056b3; /* Color for cart count */
 }
