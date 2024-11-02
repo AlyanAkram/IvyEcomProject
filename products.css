@@ -17,64 +17,6 @@ h2 {
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* Adjust gap as needed */
+  gap: 10px; /* Adjust gap as needed */
   padding: 20px; /* This should not exceed the body width */
-}
-
-.product-card {
-  position: relative;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px); /* Slight lift effect on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.product-card img {
-  width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners for images */
-}
-
-.product-card h3 {
-  font-size: 1.5em;
-  margin: 15px 0;
-  color: #333;
-}
-
-.product-card p {
-  color: #666;
-  font-size: 0.9em;
-}
-
-.product-card .price {
-  color: #007bff;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.product-card form {
-  margin-top: 10px;
-}
-
-.product-card input[type="submit"] {
-  display: block;
-  padding: 12px 0;
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.product-card input[type="submit"]:hover {
-  background-color: #0056b3; /* Change background color on hover */
 }

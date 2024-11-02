@@ -17,8 +17,8 @@
   transition: transform 0.5s;
 }
 
-.hero-image:hover {
-  transform: scale(1.1); /* Zoom effect only on the image */
+.hero-banner:hover .hero-image {
+  transform: scale(1.15); /* Scale down slightly on hover */
 }
 
 .hero-overlay {
@@ -31,9 +31,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.5s; /* Smooth transition for overlay opacity */
 }
 
-.hero-banner h1 {
+.hero-banner:hover .hero-overlay {
+  opacity: 1; /* Keep the overlay fully opaque on hover */
+}
+
+.hero-banner .slogan {
   font-size: 3em;
   color: white; /* White text color for hero heading */
   z-index: 1; /* Ensure the text is above the overlay */
@@ -54,7 +59,7 @@ h2 {
 
 /* Product Slider Styles */
 .product-slider {
-  padding: 10px, 20px; /* Add padding to the slider */
+  padding: 10px 20px; /* Add padding to the slider */
   max-width: 900px; /* Set a maximum width for the slider */
   margin: auto; /* Center the slider */
 }
@@ -62,82 +67,6 @@ h2 {
 .product-slider .slick-slide {
   display: flex; /* Ensure slides are flex containers */
   justify-content: center; /* Center items */
-}
-
-/* Product Card Styles */
-.product-card {
-  margin: 10px; /* Add margin between cards */
-  border: 1px solid #444; /* Darker border */
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #1e1e1e; /* Dark background for product cards */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow */
-  transition: transform 0.3s, box-shadow 0.3s;
-  width: 250px; /* Fixed width for product cards */
-  height: 350px; /* Fixed height for product cards */
-  display: flex;
-  flex-direction: column; /* Align content vertically */
-  justify-content: space-between; /* Space between elements */
-  overflow: hidden; /* Hide overflow for any excess content */
-}
-
-/* Product Image Styles */
-.product-card img {
-  width: 100%; /* Make images responsive */
-  height: 50%; /* Set fixed height for product images */
-  object-fit: cover; /* Cover the area without stretching */
-  border-radius: 8px; /* Add border radius to images */
-}
-
-.product-card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-
-/* Product Title Styles */
-.product-card h3 {
-  font-size: 1.5em; /* Set a uniform font size for the title */
-  margin: 15px 0;
-  color: #e0e0e0; /* Light text for product titles */
-  overflow: hidden; /* Hide overflow for the title */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
-  white-space: nowrap; /* Prevent text from wrapping */
-}
-
-/* Product Description Styles */
-.product-card p {
-  color: #bbb; /* Lighter color for product descriptions */
-  font-size: 0.9em;
-  overflow: hidden; /* Hide overflow for the description */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
-  white-space: nowrap; /* Prevent text from wrapping */
-  max-height: 50px; /* Limit height for the description */
-}
-
-.product-card .price {
-  color: #007bff; /* Price color */
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.product-card form {
-  margin-top: 10px;
-}
-
-.product-card input[type="submit"] {
-  display: block;
-  padding: 12px 0;
-  width: 100%;
-  background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.product-card input[type="submit"]:hover {
-  background-color: #0056b3; /* Change background color on hover */
 }
 
 /* Responsive Styles */
@@ -155,7 +84,7 @@ h2 {
 
 /* Responsive Styles for h1 */
 @media (max-width: 730px) {
-  .hero-banner h1 {
+  .hero-banner .slogan {
     font-size: clamp(1.5rem, 5vw + 1rem, 2rem); /* Responsive font size */
   }
 }

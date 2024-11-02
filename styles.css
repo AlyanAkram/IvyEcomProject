@@ -42,3 +42,78 @@ footer p {
   font-weight: bold;
   color: #0056b3; /* Color for cart count */
 }
+/* Product Card Styles */
+.product-card {
+  margin: 10px; /* Add margin between cards */
+  border: 1px solid #444; /* Darker border */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #1e1e1e; /* Dark background for product cards */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 250px; /* Fixed width for product cards */
+  height: 350px; /* Fixed height for product cards */
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: space-between; /* Space between elements */
+  overflow: hidden; /* Hide overflow for any excess content */
+}
+
+/* Product Image Styles */
+.product-card img {
+  width: 100%; /* Make images responsive */
+  height: 50%; /* Set fixed height for product images */
+  object-fit: cover; /* Cover the area without stretching */
+  border-radius: 8px; /* Add border radius to images */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Product Title Styles */
+.product-card h3 {
+  font-size: 1.5em; /* Set a uniform font size for the title */
+  margin: 15px 0;
+  color: #e0e0e0; /* Light text for product titles */
+  overflow: hidden; /* Hide overflow for the title */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Product Description Styles */
+.product-card p {
+  color: #bbb; /* Lighter color for product descriptions */
+  font-size: 0.9em;
+  overflow: hidden; /* Hide overflow for the description */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  max-height: 50px; /* Limit height for the description */
+}
+
+.product-card .price {
+  color: #007bff; /* Price color */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.product-card form {
+  margin-top: 10px;
+}
+
+.product-card input[type="submit"] {
+  display: block;
+  padding: 12px 0;
+  width: 100%;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card input[type="submit"]:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

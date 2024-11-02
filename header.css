@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px; /* Reduce padding for smaller height */
+  padding: 2.5px 10px; /* Reduce padding for smaller height */
   background-color: rgba(52, 58, 64, 0.5); /* Semi-transparent background */
   color: rgb(0, 0, 0);
   position: fixed;

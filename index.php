@@ -23,7 +23,7 @@ include 'db.php';
 <div class="hero-banner">
     <div class="hero-image"></div> <!-- Div for background image -->
     <div class="hero-overlay"> <!-- Dark overlay -->
-        <h1>Gear Up For The Future!</h1>
+        <a href="products.php" class='slogan'>Gear Up For The Future</a>
     </div>
 </div>
 
@@ -94,7 +94,6 @@ $(document).ready(function() {
     $('.product-slider').slick({
         slidesToShow: 4, // Show 4 products at a time on large screens
         slidesToScroll: 1,
-        infinite: true, // Allows infinite scrolling
         centerMode: false, // Disable center mode
         arrows: true, // Show arrows by default
         responsive: [
