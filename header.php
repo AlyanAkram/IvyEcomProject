@@ -1,16 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Initialize the cart session variable if it doesn't exist
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = []; // Initialize as an empty array
-}
-
-// Include database connection
-include 'db.php';
-?>
 <!-- header.php -->
 <!DOCTYPE html>
 <html lang="en">
@@ -25,23 +12,17 @@ include 'db.php';
     <a href="index.php" class="site-logo">
         <img src="images/logo.png" alt="Ivy Tech Shop Logo" id="site-logo">
     </a>
+    <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
     <nav class="nav">
         <a href="index.php" class="nav-link">Home</a>
         
         <?php if (isset($_SESSION['user_id'])): ?>
             <a href="products.php" class="nav-link">Products</a>
-            
-            <!-- Cart link that redirects to the cart page -->
             <a href="cart.php" class="nav-link">Cart</a>
-            
-            <!-- Cart icon with item count next to it -->
             <div class="cart">
                 <a href="#" class="cart-link">
                     <img src="images/cart-icon.png" alt="Cart" class="cart-icon">
-                    <!-- ... Existing header code ... -->
-<span class="cart-count"><?php echo count($_SESSION['cart']); ?></span>
-<!-- ... Existing header code ... -->
-
+                    <span class="cart-count"><?php echo count($_SESSION['cart']); ?></span>
                 </a>
                 <div id="cart-menu" class="cart-menu">
                     <h3>Your Cart</h3>
@@ -64,7 +45,6 @@ include 'db.php';
                     ?>
                 </div>
             </div>
-
             <a href="logout.php" class="nav-link">Logout</a>
         <?php else: ?>
             <a href="login.php" class="nav-link">Login</a>
@@ -73,11 +53,13 @@ include 'db.php';
     </nav>
 </header>
 
-<!-- JavaScript for the cart menu -->
+<!-- JavaScript for the cart menu and hamburger toggle -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const cartIcon = document.querySelector('.cart-link');
         const cartMenu = document.getElementById('cart-menu');
+        const nav = document.querySelector('.nav');
+        const hamburger = document.querySelector('.hamburger');
 
         // Toggle the display of the cart menu when the cart icon is clicked
         cartIcon.addEventListener('click', function (e) {
@@ -91,7 +73,29 @@ include 'db.php';
                 cartMenu.style.display = 'none';
             }
         });
+
+        // Function to handle hamburger menu toggle
+        window.toggleMenu = function() {
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        };
+
+        // Reset the navigation display on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 582) {
+                nav.style.display = 'flex'; // Show nav links in large screen
+            } else {
+                nav.style.display = 'none'; // Hide nav links in small screen
+            }
+        });
+
+        // Initialize nav display based on current window size
+        if (window.innerWidth > 582) {
+            nav.style.display = 'flex';
+        } else {
+            nav.style.display = 'none';
+        }
     });
 </script>
+
 </body>
 </html>

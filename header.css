@@ -3,9 +3,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #343a40;
-  color: white;
+  padding: 10px 20px; /* Reduce padding for smaller height */
+  background-color: rgba(52, 58, 64, 0.5); /* Semi-transparent background */
+  color: rgb(0, 0, 0);
+  position: fixed;
+  top: 20px; /* Position it slightly below the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Centering adjustment */
+  width: 80%; /* Set width to be less than full screen */
+  max-width: 1000px; /* Optionally, limit the maximum width */
+  border-radius: 15px; /* Rounded corners for a sleeker look */
+  z-index: 1000;
 }
 
 .site-logo {
@@ -51,9 +59,11 @@
 }
 
 .cart-icon {
-  height: 20px; /* Adjust as needed */
+  display: inline-block; /* Ensure it displays inline with text */
+  height: 20px; /* Adjust to your preferred height */
   width: auto;
   margin-right: 5px;
+  vertical-align: middle; /* Aligns with text baseline */
 }
 
 .cart-menu {
@@ -76,13 +86,38 @@
   margin: 0;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .nav-link {
-    font-size: 0.9em; /* Smaller font size for navigation links */
+/* Hide nav links and show hamburger icon on small screens */
+@media (max-width: 582px) {
+  .nav {
+    display: none; /* Hide the nav links */
+    flex-direction: column; /* Vertical layout for dropdown */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(52, 58, 64, 0.9);
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
   }
 
-  .cart-link {
-    font-size: 0.9em; /* Smaller font size for cart link */
+  .nav-link {
+    margin: 5px 0;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on smaller screens */
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #f8f9fa;
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
+
+/* Hide hamburger icon on larger screens */
+@media (min-width: 583px) {
+  .hamburger {
+    display: none; /* Hide hamburger on larger screens */
   }
 }
