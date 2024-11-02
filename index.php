@@ -64,8 +64,37 @@ include 'db.php';
     <div class="hero-banner">
         <div class="hero-image2"></div> <!-- Div for background image -->
         <div class="hero-overlay"> <!-- Dark overlay -->
-        <a href="products.php" class='slogan'>All Your Tech Needs In One Place</a>
+            <a href="products.php" class='slogan'>All Your Tech Needs In One Place</a>
         </div>
+    </div>
+
+    <!-- Best Sellers Slider -->
+    <h2>Best Sellers</h2>
+    <div class="best-sellers-slider">
+        <?php
+        // Query to get the best-selling products
+        $result = $conn->query("SELECT * FROM products WHERE best_seller = 1 LIMIT 4");
+        
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="product-card">
+                          <div style="position: relative; overflow: hidden; border-radius: 8px;">
+                              <img src="'.$row['image'].'" alt="'.$row['name'].'">
+                          </div>
+                          <h3>'.$row['name'].'</h3>
+                          <p>'.$row['description'].'</p>
+                          <p class="price">$'.$row['price'].'</p>';
+                
+                echo '<form class="add-to-cart-form" data-product-id="'.$row['id'].'">
+                        <input type="hidden" name="product_id" value="'.$row['id'].'">
+                        <input type="submit" value="Add to Cart">
+                      </form>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No best-selling products available.</p>'; // Handle no products case
+        }
+        ?>
     </div>
 </main>
 
@@ -96,7 +125,7 @@ $(document).ready(function() {
 });
 </script>
 
-<!-- Slider initialization -->
+<!-- Slider initialization for Featured Products -->
 <script>
 $(document).ready(function() {
     $('.product-slider').slick({
@@ -112,6 +141,26 @@ $(document).ready(function() {
                     slidesToScroll: 1,
                     infinite: true, // Allows infinite scrolling
                     arrows: false, // Remove arrows on small screens
+                    autoplay: true, // Optional: enable autoplay
+                    autoplaySpeed: 2000
+                }
+            }
+        ]
+    });
+
+    // Slider initialization for Best Sellers
+    $('.best-sellers-slider').slick({
+        slidesToShow: 4, // Show 4 products at a time on large screens
+        slidesToScroll: 1,
+        centerMode: false, // Disable center mode
+        arrows: false, // Remove arrows from Best Sellers slider
+        responsive: [
+            {
+                breakpoint: 768, // Adjust for smaller screens
+                settings: {
+                    slidesToShow: 2, // Show 2 products on smaller screens
+                    slidesToScroll: 1,
+                    infinite: true, // Allows infinite scrolling
                     autoplay: true, // Optional: enable autoplay
                     autoplaySpeed: 2000
                 }

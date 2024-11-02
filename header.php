@@ -1,3 +1,18 @@
+<?php
+// Check if a session is already active
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); // Start the session if it hasn't been started
+}
+
+// Initialize the cart if it doesn't exist
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = []; // Initialize it as an empty array
+}
+
+// Other header code...
+?>
+
+
 <!-- header.php -->
 <!DOCTYPE html>
 <html lang="en">
