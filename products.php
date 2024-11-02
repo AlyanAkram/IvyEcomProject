@@ -18,6 +18,20 @@ include 'db.php'; // Include database connection
 
 <main>
     <h2>All Products</h2>
+    
+    <!-- Sorting and Search Section -->
+    <div class="sort-search-container">
+        <select id="sort-options">
+            <option value="default">Sort by</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+        </select>
+        
+        <input type="text" id="search-bar" placeholder="Search products...">
+    </div>
+
     <div class="product-list">
     <?php
     $result = $conn->query("SELECT * FROM products");
@@ -42,7 +56,7 @@ include 'db.php'; // Include database connection
 
 <?php include 'footer.php'; ?>
 
-<!-- JavaScript to handle AJAX form submission -->
+<!-- JavaScript to handle AJAX form submission and sorting/search -->
 <script>
 $(document).ready(function() {
     $('.add-to-cart-form').on('submit', function(event) {
@@ -64,9 +78,53 @@ $(document).ready(function() {
             }
         });
     });
+
+    // Sort and search functionality
+    $('#sort-options').on('change', function() {
+        const sortValue = $(this).val();
+        sortProducts(sortValue);
+    });
+
+    $('#search-bar').on('input', function() {
+        const searchTerm = $(this).val().toLowerCase();
+        filterProducts(searchTerm);
+    });
+
+    function sortProducts(sortValue) {
+        const products = $('.product-card');
+        const sortedProducts = products.toArray().sort((a, b) => {
+            const nameA = $(a).find('h3').text().toLowerCase();
+            const nameB = $(b).find('h3').text().toLowerCase();
+            const priceA = parseFloat($(a).find('.price').text().replace('$', ''));
+            const priceB = parseFloat($(b).find('.price').text().replace('$', ''));
+
+            if (sortValue === 'name-asc') {
+                return nameA.localeCompare(nameB);
+            } else if (sortValue === 'name-desc') {
+                return nameB.localeCompare(nameA);
+            } else if (sortValue === 'price-asc') {
+                return priceA - priceB;
+            } else if (sortValue === 'price-desc') {
+                return priceB - priceA;
+            }
+            return 0; // Default case, no sorting
+        });
+
+        $('.product-list').empty().append(sortedProducts);
+    }
+
+    function filterProducts(searchTerm) {
+        $('.product-card').each(function() {
+            const productName = $(this).find('h3').text().toLowerCase();
+            if (productName.includes(searchTerm)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
 });
 </script>
-
 
 </body>
 </html>

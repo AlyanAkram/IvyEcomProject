@@ -47,6 +47,41 @@ h2 {
   object-fit: cover; /* Cover the area without stretching */
   border-radius: 8px; /* Add border radius to images */
 }
+/* products.css */
+
+/* products.css */
+
+/* products.css */
+
+/* Styles for the sorting and search container */
+.sort-search-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin: 15px auto; /* Center the container and add vertical space */
+  max-width: 800px; /* Set a max-width to keep it compact */
+  padding: 0 20px; /* Add horizontal padding */
+}
+
+.sort-search-container select,
+.sort-search-container input {
+  padding: 8px; /* Reduced padding for a more compact feel */
+  margin-right: 8px; /* Space between elements */
+  border: 1px solid #444; /* Darker border for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 0.9em; /* Slightly smaller font size */
+  background-color: #1e1e1e; /* Dark background for input fields */
+  color: #e0e0e0; /* Light text color for contrast */
+}
+
+/* Optional: Change the select dropdown style */
+.sort-search-container select {
+  background-color: #1e1e1e; /* Same dark background */
+  color: #e0e0e0; /* Light text color for select */
+}
+
+.sort-search-container input {
+  flex-grow: 1; /* Take up remaining space */
+}
 
 /* Responsive Image Styles */
 @media (max-width: 768px) {
