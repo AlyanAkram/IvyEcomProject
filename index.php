@@ -94,16 +94,19 @@ $(document).ready(function() {
     $('.product-slider').slick({
         slidesToShow: 4, // Show 4 products at a time on large screens
         slidesToScroll: 1,
-        autoplay: true, // Optional: enable autoplay
-        autoplaySpeed: 2000, // Optional: speed for autoplay
         infinite: true, // Allows infinite scrolling
         centerMode: false, // Disable center mode
+        arrows: true, // Show arrows by default
         responsive: [
             {
                 breakpoint: 768, // Adjust for smaller screens
                 settings: {
                     slidesToShow: 2, // Show 2 products on smaller screens
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    infinite: true, // Allows infinite scrolling
+                    arrows: false, // Remove arrows on small screens
+                    autoplay: true, // Optional: enable autoplay
+                    autoplaySpeed: 2000
                 }
             }
         ]
