@@ -12,7 +12,6 @@ if (empty($_SESSION['cart'])) {
     echo "<p>Your cart is empty. Please add items to your cart before checking out.</p>";
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,13 @@ if (empty($_SESSION['cart'])) {
     <div class="checkout-container">
         <h3>Your Order Summary</h3>
         <table>
-            <tr><th>Product</th><th>Image</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
+            <tr>
+                <th>Product</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
             <?php
             foreach ($_SESSION['cart'] as $product_id => $quantity) {
                 $result = $conn->query("SELECT * FROM products WHERE id = $product_id");
@@ -51,7 +56,7 @@ if (empty($_SESSION['cart'])) {
             ?>
             <tr>
                 <td colspan="4" style="text-align:right;">Total Cost:</td>
-                <td>$<?php echo $total_cost; ?></td>
+                <td>$<?php echo number_format($total_cost, 2); ?></td>
             </tr>
         </table>
         
@@ -65,6 +70,22 @@ if (empty($_SESSION['cart'])) {
 
             <label for="zip">ZIP Code:</label>
             <input type="text" id="zip" name="zip" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <h3>Payment Information</h3>
+            <label for="cardholder">Cardholder Name:</label>
+            <input type="text" id="cardholder" name="cardholder" required>
+
+            <label for="cardnumber">Card Number:</label>
+            <input type="text" id="cardnumber" name="cardnumber" required>
+
+            <label for="expiry">Expiration Date (MM/YY):</label>
+            <input type="text" id="expiry" name="expiry" required placeholder="MM/YY">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
 
             <button type="submit">Complete Purchase</button>
         </form>
