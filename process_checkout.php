@@ -41,7 +41,11 @@ if ($stmt->execute()) {
     // Payment processing (Mock API call)
     $response = file_get_contents('https://run.mocky.io/v3/c2ab122f-c1ae-4fce-9898-1d0f6a00481b');
 
-    if ($response) {
+    // Check if the response code is 200 for success
+    if ($http_response_header[0] == "HTTP/1.1 200 OK") {
+        // Empty the cart
+        unset($_SESSION['cart']); // Clear the cart
+
         // Redirect to success page
         header("Location: success.php");
         exit();

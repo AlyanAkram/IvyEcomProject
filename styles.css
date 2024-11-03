@@ -62,7 +62,7 @@ footer p {
 /* Product Image Styles */
 .product-card img {
   width: 100%; /* Make images responsive */
-  height: 50%; /* Set fixed height for product images */
+  height: auto; /* Set fixed height for product images */
   object-fit: cover; /* Cover the area without stretching */
   border-radius: 8px; /* Add border radius to images */
 }
