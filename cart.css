@@ -14,15 +14,20 @@ h2 {
 }
 
 /* Cart Table Styles */
+.table-container {
+  width: 100%; /* Full width for container */
+  overflow-x: auto; /* Enable horizontal scrolling only when necessary */
+}
+
 table {
-  width: 100%;
+  width: 100%; /* Ensure the table takes full width */
   border-collapse: collapse;
   margin-top: 20px;
 }
 
 th,
 td {
-  padding: 20px; /* Increased padding for larger cell height */
+  padding: 20px; /* Maintain padding for larger cells */
   text-align: left;
   border-bottom: 2px solid #e0e0e0; /* Increased line thickness */
 }
@@ -33,7 +38,7 @@ th {
 }
 
 td img {
-  width: 100px; /* Adjust image width as needed */
+  width: 100px; /* Default image width */
   height: auto; /* Maintain aspect ratio */
   border-radius: 5px; /* Rounded corners for product images */
 }
@@ -54,4 +59,61 @@ td a:hover {
 tfoot {
   font-weight: bold;
   text-align: right;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  main {
+    padding: 10px; /* Reduce padding for small screens */
+  }
+
+  .table-container {
+    overflow-x: auto; /* Allow scrolling for table on small screens */
+    display: block; /* Make the container block to allow scrolling */
+  }
+
+  table {
+    width: 100%; /* Ensure the table uses full width available */
+  }
+
+  th,
+  td {
+    padding: 10px; /* Reduced padding for a more compact table */
+    font-size: 2.5vw; /* Dynamic font size based on viewport width */
+  }
+
+  td img {
+    width: 80px; /* Smaller image size */
+  }
+
+  h2 {
+    margin: 30px 0; /* Adjust heading margin */
+    font-size: 3.5vw; /* Dynamic font size for heading */
+  }
+
+  input[type="submit"] {
+    padding: 8px; /* Adjust button padding */
+    font-size: 2.5vw; /* Smaller button font size */
+  }
+}
+
+@media (max-width: 400px) {
+  th,
+  td {
+    padding: 4px; /* Further reduce padding for extra small screens */
+    font-size: 2vw; /* Smaller font size for very small screens */
+  }
+
+  td img {
+    width: 50px; /* Even smaller image size for very small screens */
+  }
+
+  h2 {
+    font-size: 4vw; /* Larger heading size on small screens */
+  }
+
+  input[type="submit"] {
+    padding: 6px; /* Further reduce button padding */
+    font-size: 2vw; /* Smaller button font size */
+  }
 }

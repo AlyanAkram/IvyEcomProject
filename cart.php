@@ -64,6 +64,7 @@ if (isset($_GET['action'])) {
     if (empty($_SESSION['cart'])) {
         echo "<p>Your cart is empty.</p>";
     } else {
+        echo '<div class="table-container">'; // Add this line
         echo '<table>';
         echo '<tr><th>Product</th><th>Image</th><th>Price</th><th>Quantity</th><th>Total</th><th>Actions</th></tr>';
         
@@ -97,9 +98,11 @@ if (isset($_GET['action'])) {
         echo '</td>';
         echo '</tr>';
         echo '</table>';
+        echo '</div>'; // Close the container
     }
     ?>
 </main>
+
 <?php include 'footer.php'; ?>
 </body>
 </html>
