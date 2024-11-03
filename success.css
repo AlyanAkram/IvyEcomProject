@@ -1,0 +1,24 @@
+/* success.css */
+
+body {
+  background-color: #f8f9fa; /* Light background for success page */
+  color: #333; /* Dark text color */
+}
+
+.success-container {
+  max-width: 600px;
+  margin: 100px auto; /* Center the container */
+  padding: 20px;
+  color: white; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center; /* Centered text */
+}
+
+h2 {
+  color: #28a745; /* Green color for success message */
+}
+
+p {
+  margin: 10px 0; /* Spacing between paragraphs */
+}
