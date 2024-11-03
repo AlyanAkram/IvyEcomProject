@@ -3,14 +3,14 @@
 /* Main Content Styles */
 main {
   max-width: 800px;
-  margin: auto;
+  margin: 25px auto 15%;
   padding: 40px;
 }
 
 h2 {
   text-align: center;
-  margin: 20px 0;
-  color: #000000; /* Color for headings */
+  margin: 60px 0px 0px;
+  color: #ffffff; /* Color for headings */
 }
 
 /* Cart Table Styles */
