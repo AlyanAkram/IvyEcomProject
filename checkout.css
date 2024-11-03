@@ -41,7 +41,8 @@ th {
 }
 
 /* Input Styles */
-input[type="text"] {
+input[type="text"],
+select {
   width: 100%;
   padding: 10px;
   margin: 5px 0 20px 0;
@@ -49,6 +50,14 @@ input[type="text"] {
   border-radius: 4px;
   background-color: #343a40; /* Dark input background */
   color: #e0e0e0; /* Light text color for inputs */
+  font-size: 1em; /* Consistent font size */
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
 }
 
 /* Button Styles */
@@ -62,9 +71,20 @@ button {
   font-size: 1em;
   display: block;
   width: 100%;
-  transition: background-color 0.3s; /* Smooth transition */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
 }
 
 button:hover {
   background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Additional Styling for the Checkout Form */
+.checkout-container form {
+  margin-top: 20px; /* Add space above the form */
+}
+
+label {
+  font-weight: bold; /* Make labels bold */
+  color: #ffffff; /* Light text for labels */
 }
