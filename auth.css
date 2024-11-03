@@ -1,14 +1,3 @@
-/* Global Styles */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa; /* Light gray background */
-  color: #333;
-}
-
 .container {
   max-width: 400px; /* Set a max width for the form container */
   margin: 50px auto; /* Center the container */
@@ -29,6 +18,7 @@ label {
 }
 
 .form-container {
+  padding-top: 50px;
   display: flex;
   flex-direction: column; /* Align items vertically */
   align-items: center; /* Center items horizontally */

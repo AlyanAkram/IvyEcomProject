@@ -27,7 +27,7 @@ a:hover {
 /* Header and Footer Styles */
 header,
 footer {
-  background-color: #1e1e1e; /* Dark background for header and footer */
+  background-color: #000000; /* Dark background for header and footer */
   padding: 20px;
   text-align: center;
 }
