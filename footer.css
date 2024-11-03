@@ -1,22 +1,48 @@
-/* footer.css */
-html,
-body {
-  height: 100%; /* Ensure body takes full height */
-  margin: 0; /* Remove default margin */
-}
-
-body {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-}
-
 .footer {
-  text-align: center;
-  padding: 20px;
   background-color: #343a40;
-  color: white;
-  position: relative; /* Position relative for stacking context */
-  margin-top: auto; /* Push footer to the bottom */
-  width: 100%; /* Full width */
-  font-size: 0.9em; /* Font size */
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.2em;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links .nav-link {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links .nav-link:hover {
+  color: #e0e0e0;
+}
+
+.footer-info {
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.1);
+}
+
+.footer-social img {
+  width: 30px;
+  height: auto;
 }
