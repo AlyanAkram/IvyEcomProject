@@ -1,0 +1,73 @@
+/* faq.css */
+
+main {
+  max-width: 800px; /* Center the main content */
+  margin: 7% auto; /* Center the main section */
+  padding: 20px; /* Padding for the main section */
+  color: #ffffff; /* Text color */
+}
+
+h2 {
+  text-align: center; /* Center the title */
+  color: #ffffff; /* Title color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.faq-item {
+  margin: 20px 0; /* Space between FAQ items */
+  padding: 15px; /* Padding inside FAQ items */
+  background-color: #343a40; /* Background color for FAQ items */
+  border-radius: 4px; /* Rounded corners for FAQ items */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.faq-item:hover {
+  background-color: #495057; /* Darker background on hover */
+}
+
+.faq-item h3 {
+  font-weight: bold; /* Bold text for questions */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin: 0; /* Remove default margin */
+}
+
+.faq-answer {
+  margin-top: 10px; /* Space above the answer */
+  display: none; /* Initially hide answers */
+  color: #ffffff; /* Text color for answers */
+}
+
+.faq-item.active .faq-answer {
+  display: block; /* Show the answer when active */
+}
+
+.faq-item a {
+  color: #ffffff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.faq-item a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+/* Add styles for the FAQ answer and active state */
+.faq-answer {
+  display: none; /* Hide answers by default */
+  padding: 10px;
+  background-color: #495057; /* Background for answers */
+  border-radius: 4px;
+}
+
+.faq-answer.active {
+  display: block; /* Show answer when active */
+}
+
+.faq-question {
+  cursor: pointer; /* Change cursor to pointer */
+  color: #ffffff; /* Link color for questions */
+  margin: 10px 0; /* Spacing between questions */
+}
+
+.faq-question.active-question {
+  font-weight: bold; /* Bold the active question */
+}

@@ -35,7 +35,7 @@ footer {
 header h1,
 footer p {
   margin: 0;
-  color: #e0e0e0; /* Light text color for header and footer */
+  color: #ffffff; /* Light text color for header and footer */
 }
 
 .cart-count {
@@ -76,7 +76,7 @@ footer p {
 .product-card h3 {
   font-size: 1.5em; /* Set a uniform font size for the title */
   margin: 15px 0;
-  color: #e0e0e0; /* Light text for product titles */
+  color: #ffffff; /* Light text for product titles */
   overflow: hidden; /* Hide overflow for the title */
   text-overflow: ellipsis; /* Add ellipsis for overflow text */
   white-space: nowrap; /* Prevent text from wrapping */
@@ -84,7 +84,7 @@ footer p {
 
 /* Product Description Styles */
 .product-card p {
-  color: #bbb; /* Lighter color for product descriptions */
+  color: #c4c4c4; /* Lighter color for product descriptions */
   font-size: 0.9em;
   overflow: hidden; /* Hide overflow for the description */
   text-overflow: ellipsis; /* Add ellipsis for overflow text */
@@ -116,4 +116,13 @@ footer p {
 
 .product-card input[type="submit"]:hover {
   background-color: #0056b3; /* Change background color on hover */
+}
+.success-message {
+  color: #28a745;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #28a745;
+  background-color: #d4edda;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
